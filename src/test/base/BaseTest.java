@@ -23,10 +23,10 @@ public class BaseTest {
         driver.get(ConfigReader.readProperty(filePath, "url"));
     }
 
-//    @AfterMethod
-//    public void tearDown(){
-//       driver.quit();
-//   }
+    @AfterMethod
+    public void tearDown(){
+       driver.quit();
+   }
 
     public void initializeDriver(String browser){
         driver = null;
@@ -51,6 +51,7 @@ public class BaseTest {
     }
 
     public WebDriver getDriver(){
+
         return driver;
     }
 }
