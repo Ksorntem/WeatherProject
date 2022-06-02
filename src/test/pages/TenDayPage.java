@@ -1,4 +1,35 @@
 package pages;
 
-public class TenDayPage {
+import base.BasePage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class TenDayPage extends BasePage {
+
+    protected WebDriver driver;
+
+    public TenDayPage(WebDriver driver){
+        super(driver);
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    @FindBy(name = "caret-up")
+    public WebElement upBtn;
+
+    @FindBy(xpath = "div[@data-testid='DetailsSummary']/h3")
+    public WebElement date;
+
+    @FindBy(xpath = "div[@data-testid='DetailsSummary']/div[@data-testid='detailsTemperature']")
+    public WebElement tempDetail;
+
+    @FindBy(xpath = "div[@data-testid='DetailsSummary']/div/span[@class='DetailsSummary--extendedData--365A_']")
+    public WebElement summaryDetail;
+
+    //div[@data-testid='DetailsSummary']/h3
+    //div[@data-testid='DetailsSummary']/div[@data-testid='detailsTemperature']
+    //div[@data-testid='DetailsSummary']/div/span[@class='DetailsSummary--extendedData--365A_']
+
 }

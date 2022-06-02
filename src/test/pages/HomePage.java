@@ -23,4 +23,21 @@ public class HomePage extends BasePage {
 
     @FindBy(name = "close")
     public WebElement closeBtn;
+
+    @FindBy(xpath = "//div[@data-testid='Footer']")
+    public WebElement footer;
+
+    @FindBy(name = "facebook")
+    public WebElement facebook;
+
+    @FindBy(name = "twitter")
+    public WebElement twitter;
+
+    @FindBy(name = "youtube")
+    public WebElement youtube;
+
+    @FindBy(xpath = "//*[text()='10 Day']")
+    public WebElement tenDayBtn;
+
+
 }
