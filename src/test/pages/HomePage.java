@@ -28,13 +28,13 @@ public class HomePage extends BasePage {
     public WebElement footer;
 
     @FindBy(name = "facebook")
-    public WebElement facebook;
+    public WebElement facebookBtn;
 
     @FindBy(name = "twitter")
-    public WebElement twitter;
+    public WebElement twitterBtn;
 
     @FindBy(name = "youtube")
-    public WebElement youtube;
+    public WebElement youtubeBtn;
 
     @FindBy(xpath = "//*[text()='10 Day']")
     public WebElement tenDayBtn;

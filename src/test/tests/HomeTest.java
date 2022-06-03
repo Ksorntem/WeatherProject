@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import utils.SeleniumUtils;
 
 public class HomeTest extends BaseTest {
     HomePage homePage;
@@ -26,16 +27,32 @@ public class HomeTest extends BaseTest {
 
     }
 
-    @Test(testName = "T2 - GetTitle",description = "Print out titles of all 3 pages")
-    public void getTitleTest(){
+    @Test(testName = "T2 - Test social media buttons - Facebook",description = "Verify Facebook titile")
+    public void facebookTest(){
+        homePage.click(homePage.closeBtn);
+        homePage.click(homePage.facebookBtn);
+        String actualTitle = SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
 
-        homePage.click(homePage.facebook);
-        homePage.click(homePage.twitter);
-        homePage.click(homePage.youtube);
+        Assert.assertEquals(actualTitle, "The Weather Channel - Home | Facebook");
+    }
 
-        homePage.swichToNextWindow(homePage.facebook);
+    @Test(testName = "T3 - Test social media buttons - Twitter",description = "Verify Twitter titile")
+    public void test03(){
+        homePage.click(homePage.twitterBtn);
+        homePage.click(homePage.closeBtn);
+        homePage.click(homePage.twitterBtn);
+        String actualTitle = SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
 
-        Assert.assertEquals(getDriver().getTitle(), "The Weather Channel - Home | Facebook");
+        Assert.assertEquals(actualTitle, "The Weather Channel (@weatherchannel) / Twitter");
+    }
 
+    @Test(testName = "T4 - Test social media buttons - Youtube",description = "Verify Youtube titile")
+    public void test04(){
+        homePage.click(homePage.youtubeBtn);
+        homePage.click(homePage.closeBtn);
+        homePage.click(homePage.youtubeBtn);
+        String actualTitle = SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
+
+        Assert.assertEquals(actualTitle, "The Weather Channel - YouTube");
     }
 }

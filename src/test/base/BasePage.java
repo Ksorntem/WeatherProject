@@ -38,7 +38,7 @@ public class BasePage {
     }
 
     public void waitForElementClickability(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
@@ -50,23 +50,5 @@ public class BasePage {
     public void moveIntoView(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
-
-    public void swichToNextWindow(WebElement element) {
-        String mainWindowID = driver.getWindowHandle();
-        Set<String> allWindows = driver.getWindowHandles();
-
-        for (String each : allWindows) {
-            driver.switchTo().window(each);
-            if (driver.getTitle().contains("Facebook")) {
-                System.out.println(driver.getTitle());
-            } else if (driver.getTitle().contains("Twitter")) {
-                System.out.println(driver.getTitle());
-            } else if (driver.getTitle().contains("YouTube")) {
-                System.out.println(driver.getTitle());
-            }
-        }
-
-        driver.switchTo().window(mainWindowID);
-
-    }
 }
+
