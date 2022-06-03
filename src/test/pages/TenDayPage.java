@@ -21,13 +21,13 @@ public class TenDayPage extends BasePage {
     @FindBy(name = "caret-up")
     public WebElement upBtn;
 
-    @FindBy(xpath = "div[@data-testid='DetailsSummary']/h3")
+    @FindBy(xpath = "//div[@data-testid='DetailsSummary']/h3")
     public List<WebElement> date;
 
-    @FindBy(xpath = "div[@data-testid='DetailsSummary']/div[@data-testid='detailsTemperature']")
+    @FindBy(xpath = "//div[@data-testid='DetailsSummary']/div[@data-testid='detailsTemperature']")
     public List<WebElement> tempDetail;
 
-    @FindBy(xpath = "div[@data-testid='DetailsSummary']/div/span[@class='DetailsSummary--extendedData--365A_']")
+    @FindBy(xpath = "//div[@data-testid='DetailsSummary']/div/span[@class='DetailsSummary--extendedData--365A_']")
     public List<WebElement> summaryDetail;
 
 }
